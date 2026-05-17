@@ -1,10 +1,13 @@
 # PMD2MML
 
-This is a fork from an old build of libopenpmd by OPNA2608. The purpose of this software is to decompile PMD files directly to MML, with minimal post-processing needed.
+This is a fork from an old build of [libopenpmd](https://github.com/OPNA2608/libopenpmd) by OPNA2608. 
 
-To build, download all the files and then compile pmd2mml.c into an executable with `make`.
+The purpose of this software is to decompile PMD files directly to MML, with minimal post-processing needed.
 
-This program was tested using MC.EXE version 4.8s, and will generate MML code compatible with that version. All commands are supported, and should generate code that is byte-perfect for 99% of songs.
+This program was tested using [MC.EXE version 4.8s](http://www5.airnet.ne.jp/kajapon/tool.html),
+and will generate MML code compatible with that version. 
+
+All commands are supported, and should generate code that is byte-perfect for 99% of songs.
 
 I started programming less than a month ago, so apologies for the messy code!
 
@@ -24,6 +27,23 @@ Prints #Option flags (/v and /c are automatically added, /n is omitted)
 
 Can bulk-convert songs, so feel free to drag-and-drop an entire OST.
 
+## Building
+
+Download or clone this repo.
+
+Compile the program into `pmd2mml` based on your system.
+
+A `makefile` is provided for easier compiling on Unix-like systems
+and Windows systems with `make` installed. 
+
+To make this program available beyond the local repo's directory:
+### Linux
+- System-wide: `sudo make install`
+- Local: `PREFIX=~/.local make install` (may depend on your distro).
+### Windows
+- System-wide: Copy `pmd2mml.exe` into `C:\Program Files`
+- Local: Copy `pmd2mml.exe` into `C:\Users\yourname\AppData\Roaming`
+
 ## Bugs
 
 Might work well with OPM (X68000)
@@ -35,6 +55,10 @@ Will NOT work with FM-TOWNS
 Ties get regrouped when re-compiled (not much can be done about that, it's a compiler quirk)
 
 Extra Zenlen command might get spit out on the G channel when re-compiling
+
+Generated MML files will be in UTF-8 format by default,
+which may result in mojibake in the header lines for some files,
+such as the soundtracks of the PC-98 Touhou games.
 
 
 ## Credits
