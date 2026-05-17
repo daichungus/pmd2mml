@@ -2,7 +2,7 @@
 
 This is a fork from an old build of libopenpmd by OPNA2608. The purpose of this software is to decompile PMD files directly to MML, with minimal post-processing needed.
 
-To build, download all the files and then compile pmd2mml.c into an executable.
+To build, download all the files and then compile pmd2mml.c into an executable with `make`.
 
 This program was tested using MC.EXE version 4.8s, and will generate MML code compatible with that version. All commands are supported, and should generate code that is byte-perfect for 99% of songs.
 
